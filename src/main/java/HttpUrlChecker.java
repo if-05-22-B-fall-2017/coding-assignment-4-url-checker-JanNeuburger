@@ -25,5 +25,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class HttpUrlChecker {
-
+    public static Matcher getMatcher(String httpString) {
+        Pattern p = Pattern.compile("https?://((\\w+|\\w+-\\w+)\\.)+\\p{Alpha}+");
+        return p.matcher(httpString);
+    }
 }
